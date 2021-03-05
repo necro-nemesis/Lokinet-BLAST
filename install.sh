@@ -1,5 +1,7 @@
 #!/bin/bash
 
+lokinet_dir="/tmp/lokinet"
+
 function show_splash() {
 
     cyan='\033[1;36m'
@@ -41,7 +43,6 @@ echo "Install resolvconf and configure"
  # Fetches latest files from github to lokinet installation directory
  function download_latest_files() {
 
-    lokinet_dir="/usr/local/etc/lokinet"
 
      if [ -d "$lokinet_dir" ]; then
          sudo mv $lokinet_dir "$lokinet_dir.`date +%F-%R`" || install_error "Unable to remove old lokinet-installer directory"
