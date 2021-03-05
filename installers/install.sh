@@ -43,17 +43,17 @@ echo "Install Lokinet-GUI"
 function resolv_config () {
 
   echo -n "Do you wish to install and configure resolvconf (recommended)? [y/N]: "
-  read answer
-  if [[ $answer != "y" ]]; then
-      echo "Installation aborted."
+#  read answer
+#  if [[ $answer != "y" ]]; then
+#      echo "Installation aborted."
 
-  else
+#  else
 
  sudo apt install resolvconf -y
  sudo resolvconf -u
  sudo systemctl restart lokinet
 
-  fi
+#  fi
 
 }
  # Fetches latest files from github to lokinet installation directory
