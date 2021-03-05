@@ -1,6 +1,6 @@
-#!/bin/bash
-lokinet_dir="/etc/lokinet"
-lokinet_user="www-data"
+lokinet_dir="/usr/local/etc/lokinet"
+
+function show_splash() {
 
     cyan='\033[1;36m'
 
@@ -13,7 +13,9 @@ lokinet_user="www-data"
     echo -e " \_____/\___/|_|\_\_|_| |_|\___|\__| "
 
 echo "Install public key and add packages."
+}
 
+function install_main () {
   sudo modprobe tun
   sudo curl -so /etc/apt/trusted.gpg.d/oxen.gpg https://deb.oxen.io/pub.gpg
   echo "deb https://deb.oxen.io $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/oxen.list
@@ -25,6 +27,9 @@ echo "Resync package repositories."
 echo "Install Lokinet-GUI"
 
   sudo apt install lokinet-gui -y
+}
+
+function resolv_config () {
 
 echo "Install resolvconf and configure"
 
@@ -32,6 +37,7 @@ echo "Install resolvconf and configure"
  sudo resolvconf -u
  sudo systemctl restart lokinet
 
+}
  # Fetches latest files from github to lokinet installation directory
  function download_latest_files() {
      if [ -d "$lokinet_dir" ]; then
@@ -45,5 +51,10 @@ echo "Install resolvconf and configure"
 
  }
 
-
-echo "Installation complete!"
+function install_lokinet () {
+    show_splash
+    download_latest_files
+    install_main
+    resolv_config
+    echo "Installation complete!"
+}
