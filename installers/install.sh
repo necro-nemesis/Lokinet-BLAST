@@ -18,6 +18,7 @@ echo "Install public key and add packages."
 
 function install_main () {
 
+  install_log "Configure Lokinet installation"
   echo -n "Do you wish to install public key and add packages? [y/N]: "
   read answer
   if [[ $answer != "y" ]]; then
@@ -41,7 +42,8 @@ echo "Install Lokinet-GUI"
 }
 
 function resolv_config () {
-
+  
+  install_log "Configure resolvconf installation"
   echo -n "Do you wish to install and configure resolvconf (recommended)? [y/N]: "
 #  read answer
 #  if [[ $answer != "y" ]]; then
