@@ -74,7 +74,7 @@ function resolv_config () {
 
  # Outputs a Install log line
  function install_log() {
-     echo -e "\033[1;32mLabyrinthAP Install: $*\033[m"
+     echo -e "\033[1;32mLokinet Install: $*\033[m"
  }
 
 function install_lokinet () {
