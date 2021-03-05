@@ -23,7 +23,7 @@ function install_main () {
   if [[ $answer != "y" ]]; then
       echo "Installation aborted."
       exit 0
-  fi
+  else
 
   sudo modprobe tun
   sudo curl -so /etc/apt/trusted.gpg.d/oxen.gpg https://deb.oxen.io/pub.gpg
@@ -36,6 +36,8 @@ echo "Resync package repositories."
 echo "Install Lokinet-GUI"
 
   sudo apt install lokinet-gui -y
+
+  fi
 }
 
 function resolv_config () {
@@ -45,11 +47,13 @@ function resolv_config () {
   if [[ $answer != "y" ]]; then
       echo "Installation aborted."
 
-  fi
+  else
 
  sudo apt install resolvconf -y
  sudo resolvconf -u
  sudo systemctl restart lokinet
+
+  fi
 
 }
  # Fetches latest files from github to lokinet installation directory
