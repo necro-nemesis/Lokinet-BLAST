@@ -4,5 +4,5 @@ Name=Uninstall Lokinet
 Comment=Remove Lokinet
 Icon=/usr/share/pixmaps/lokiremove.png
 Exec=/tmp/lokinet/assets/uninstall.sh
-Terminal=false
+Terminal=true
 Categories=Network
