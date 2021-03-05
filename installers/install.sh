@@ -12,7 +12,7 @@ function show_splash() {
     echo -e " | |___| (_) |   <| | | | |  __/ |_"
     echo -e " \_____/\___/|_|\_\_|_| |_|\___|\__| "
 
-echo "Install public key and add packages."
+echo "This installation adds Lokinet, tun module and resolvconf to your system"
 
 }
 
