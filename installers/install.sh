@@ -11,20 +11,19 @@ function show_splash() {
     echo -e " | |    / _ \| |/ / | '_ \ / _ \ __| "
     echo -e " | |___| (_) |   <| | | | |  __/ |_"
     echo -e " \_____/\___/|_|\_\_|_| |_|\___|\__| "
-
+    echo -e " __________.____       _____    ____________________ "
+    echo -e " \______   \    |     /  _  \  /   _____/\__    ___/ "
+    echo -e "  |    |  _/    |    /  /_\  \ \_____  \   |    | "
+    echo -e "  |    |   \    |___/    |    \/        \  |    | "
+    echo -e "  |______  /_______ \____|__  /_______  /  |____| "
+    echo -e "         \/        \/       \/        \/ "
 echo "This installation adds Lokinet, tun module and resolvconf to your system"
 
 }
 
 function install_main () {
 
-  install_log "Clone change_file_ownership and conduct Lokinet installation"
-  echo -n "Do you wish to install public key and add packages? [y/N]: "
-  read answer
-  if [[ $answer != "y" ]]; then
-      echo "Installation aborted."
-      exit 0
-  fi
+  install_log "Clone and conduct Lokinet installation"
 
   sudo modprobe tun
   sudo curl -so /etc/apt/trusted.gpg.d/oxen.gpg https://deb.oxen.io/pub.gpg
@@ -43,16 +42,11 @@ echo "Install Lokinet-GUI"
 function resolv_config () {
 
   install_log "Configure resolvconf installation"
-  echo -n "Do you wish to install and configure resolvconf (recommended)? [y/N]: "
-#  read answer
-#  if [[ $answer != "y" ]]; then
-#      echo "Installation aborted."
-
-#  fi
 
  sudo apt install resolvconf -y
  sudo resolvconf -u
  sudo systemctl restart lokinet
+ sudo lxpanelctl restart
 
 }
  # Fetches latest files from github to lokinet installation directory
