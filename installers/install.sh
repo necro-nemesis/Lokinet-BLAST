@@ -18,7 +18,7 @@ echo "This installation adds Lokinet, tun module and resolvconf to your system"
 
 function install_main () {
 
-  install_log "Configure Lokinet installation"
+  install_log "Clone change_file_ownership and conduct Lokinet installation"
   echo -n "Do you wish to install public key and add packages? [y/N]: "
   read answer
   if [[ $answer != "y" ]]; then
@@ -62,7 +62,7 @@ function resolv_config () {
          sudo mv $lokinet_dir "$lokinet_dir.`date +%F-%R`" || install_error "Unable to remove old lokinet-installer directory"
      fi
 
-     install_log "Cloning latest files from github"
+     install_log "Cloning initialization files from github"
      git clone --depth 1 https://github.com/necro-nemesis/Raspberry-Pi-OS-Lokinet $lokinet_dir || install_error "Unable to download files from github"
      sudo mv $lokinet_dir/assets/Lokinet.desktop /usr/share/applications/ || install_error "Unable to add startup entry"
      sudo mv $lokinet_dir/img/lokiremove.png /usr/share/pixmaps/ || install_error "Unable to add startup icon"
