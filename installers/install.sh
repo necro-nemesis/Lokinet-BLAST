@@ -74,4 +74,5 @@ function install_lokinet () {
     install_main
     resolv_config
     echo "Installation complete!"
+    /usr/bin/lokinet-gui --notray
 }
