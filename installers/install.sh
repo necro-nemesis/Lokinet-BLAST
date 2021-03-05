@@ -42,7 +42,7 @@ echo "Install Lokinet-GUI"
 }
 
 function resolv_config () {
-  
+
   install_log "Configure resolvconf installation"
   echo -n "Do you wish to install and configure resolvconf (recommended)? [y/N]: "
 #  read answer
@@ -70,6 +70,11 @@ function resolv_config () {
      sudo mv $lokinet_dir/assets/Lokinet.desktop /usr/share/applications/ || install_error "Unable to add startup entry"
      sudo mv $lokinet_dir/img/lokiremove.png /usr/share/pixmaps/ || install_error "Unable to add startup icon"
 
+ }
+
+ # Outputs a Install log line
+ function install_log() {
+     echo -e "\033[1;32mLabyrinthAP Install: $*\033[m"
  }
 
 function install_lokinet () {
