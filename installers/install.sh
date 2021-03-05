@@ -58,8 +58,8 @@ function resolv_config () {
 
      install_log "Cloning initialization files from github"
      git clone --depth 1 https://github.com/necro-nemesis/Raspberry-Pi-OS-Lokinet $lokinet_dir || install_error "Unable to download files from github"
-     sudo mv $lokinet_dir/assets/Lokinet.desktop /usr/share/applications/ || install_error "Unable to add startup entry"
-     sudo mv $lokinet_dir/img/lokiremove.png /usr/share/pixmaps/ || install_error "Unable to add startup icon"
+     sudo mv $lokinet_dir/assets/Lokinet.desktop /usr/share/applications/Lokinet.desktop || install_error "Unable to add startup entry"
+     sudo mv $lokinet_dir/img/lokiremove.png /usr/share/pixmaps/lokiremove.png || install_error "Unable to add startup icon"
 
  }
 
