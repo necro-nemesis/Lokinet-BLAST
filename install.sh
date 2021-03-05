@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function show_splash() {
 
     cyan='\033[1;36m'
