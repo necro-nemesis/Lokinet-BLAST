@@ -13,9 +13,18 @@ function show_splash() {
     echo -e " \_____/\___/|_|\_\_|_| |_|\___|\__| "
 
 echo "Install public key and add packages."
+
 }
 
 function install_main () {
+
+  echo -n "Do you wish to install public key and add packages? [y/N]: "
+  read answer
+  if [[ $answer != "y" ]]; then
+      echo "Installation aborted."
+      exit 0
+  fi
+
   sudo modprobe tun
   sudo curl -so /etc/apt/trusted.gpg.d/oxen.gpg https://deb.oxen.io/pub.gpg
   echo "deb https://deb.oxen.io $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/oxen.list
@@ -31,7 +40,12 @@ echo "Install Lokinet-GUI"
 
 function resolv_config () {
 
-echo "Install resolvconf and configure"
+  echo -n "Do you wish to install and configure resolvconf (recommended)? [y/N]: "
+  read answer
+  if [[ $answer != "y" ]]; then
+      echo "Installation aborted."
+
+  fi
 
  sudo apt install resolvconf -y
  sudo resolvconf -u
