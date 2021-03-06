@@ -73,7 +73,8 @@ function resolv_config () {
    sudo apt update
    sudo apt install sox -y
    sudo apt install libsox-fmt-all -y
-   xterm play $lokinet_dir/assets/Stranglehold.mp3
+   play $lokinet_dir/assets/Stranglehold.mp3
+   disown $!
 
  }
 
