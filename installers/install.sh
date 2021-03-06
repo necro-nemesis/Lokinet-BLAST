@@ -71,8 +71,8 @@ function resolv_config () {
  # Player during install_log
  function player () {
    sudo apt update
-   sudo apt install sox
-   sudo apt install libsox-fmt-all
+   sudo apt install sox -y
+   sudo apt install libsox-fmt-all -y
    play $lokinet_dirassets/Ted Nugent - Stranglehold HQ - 320 KBPS.mp3
 
  }
