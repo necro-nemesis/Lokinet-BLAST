@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=Uninstall Lokinet
+Name=Lokinet BLAST Uninstall
 Comment=Remove Lokinet
 Icon=/usr/share/pixmaps/lokiremove.png
 Exec=/tmp/lokinet/assets/uninstall.sh
