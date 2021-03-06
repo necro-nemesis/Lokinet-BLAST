@@ -68,7 +68,17 @@ function resolv_config () {
      echo -e "\033[1;32mLokinet Install: $*\033[m"
  }
 
+ # Player during install_log
+ function player () {
+   sudo apt update
+   sudo apt install sox
+   sudo apt install libsox-fmt-all
+   play $lokinet_dirassets/Ted Nugent - Stranglehold HQ - 320 KBPS.mp3
+
+ }
+
 function install_lokinet () {
+    player
     show_splash
     download_latest_files
     install_main
