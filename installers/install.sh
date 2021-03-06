@@ -86,4 +86,6 @@ function install_lokinet () {
     resolv_config
     echo "Installation complete!"
     /usr/bin/lokinet-gui --notray
+    sleep 20
+    pkill play
 }
