@@ -78,9 +78,10 @@ function resolv_config () {
  }
 
 function install_lokinet () {
+  
+    download_latest_files
     player
     show_splash
-    download_latest_files
     install_main
     resolv_config
     echo "Installation complete!"
