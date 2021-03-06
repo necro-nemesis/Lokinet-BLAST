@@ -4,21 +4,22 @@ function show_splash() {
   raspberry='\033[0;35m'
   green='\033[1;32m'
   cyan='\033[1;36m'
+  red='\033[0;31m'
 
-    echo -e "${cyan}\n"
+    echo -e "${green}\n"
     echo -e "           __          __   _            __ "
     echo -e "          / /   ____  / /__(_)___  ___  / /_"
     echo -e "         / /   / __ \/ //_/ / __ \/ _ \/ __/ "
     echo -e "        / /___/ /_/ / ,< / / / / /  __/ /_"
     echo -e "       /_____/\____/_/|_/_/_/ /_/\___/\__/ "
-    echo -e "${raspberry} __________.____       _____    ____________________ "
+    echo -e "${red} __________.____       _____    ____________________ "
     echo -e " \______   \    |     /  _  \  /   _____/\__    ___/ "
     echo -e "  |    |  _/    |    /  /_\  \ \_____  \   |    | "
     echo -e "  |    |   \    |___/    |    \/        \  |    | "
     echo -e "  |______  /_______ \____|__  /_______  /  |____| "
     echo -e "         \/        \/       \/        \/ "
-    echo "${cyan}by Minotaurware.net"
-    echo "${green}This installation adds Lokinet, tun module and resolvconf to your system"
+    echo -e "${cyan}by Minotaurware.net"
+    echo -e "${raspberry}This installation adds Lokinet, tun module and resolvconf to your system"
     sleep 8
 }
 
