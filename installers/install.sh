@@ -17,8 +17,8 @@ function show_splash() {
     echo -e "  |    |   \    |___/    |    \/        \  |    | "
     echo -e "  |______  /_______ \____|__  /_______  /  |____| "
     echo -e "         \/        \/       \/        \/ "
-echo "This installation adds Lokinet, tun module and resolvconf to your system"
-
+    echo "This installation adds Lokinet, tun module and resolvconf to your system"
+    sleep 8
 }
 
 function install_main () {
