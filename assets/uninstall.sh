@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt remove lokinet-gui -y && sudo apt remove lokinet -y
+sudo apt remove lokinet-gui -y && sudo apt remove lokinet -y && sudo apt remove lokinet-bin -y
 sudo systemctl restart dhcpcd
 sudo apt remove sox -y
 sudo rm /usr/share/applications/Lokinet.desktop || install_error "Unable to remove startup entry"
