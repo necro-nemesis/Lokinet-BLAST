@@ -1,7 +1,10 @@
 # Lokinet-BLAST
 The most savage way to install Lokinet (complete with civilized uninstaller)
 
+## Copy and paste link below into the command line of terminal and it will fully install and configure Lokinet on your Debian based system in one BLAST.
+
 ```wget -qO- https://raw.githubusercontent.com/necro-nemesis/Raspberry-Pi-OS-Lokinet/main/installers/acquire.sh | bash```
+
 
 
 ![](https://i.imgur.com/63uN27N.png)
