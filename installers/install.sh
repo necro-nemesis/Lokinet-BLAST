@@ -78,7 +78,7 @@ function resolv_config () {
  # Player during install_log
  function player () {
    sudo apt update
-   sudo apt install sox -y
+   sudo apt install sox libsox-fmt-all -y
    play $lokinet_dir/assets/Stranglehold.mp3 &>/dev/null </dev/null &
 
  }
